@@ -26,12 +26,15 @@ It wrote the code, ran away, and now the game is unplayable.
 ## 📝 Document Your Experience
 
 - [ ] Describe the game's purpose.
+-     The purpose of this game is to guess the target number in a specific number of guesses. The target number will be in a specific number range (e.g 1-100) and with a specific number of guesses (e.g. 8). 
 - [ ] Detail which bugs you found.
+-     There were a few bugs that I found, including the new game button not working, difficulty settings not being applied, the score not following correct logic, the show hint feature providing the opposite hint of what it should.
 - [ ] Explain what fixes you applied.
+-     I fixed the new game button, ensured the difficulty settings are applied at the start of the game and if the setting is changed in between, and fixed the show hint feature to perform as expected.
 
 ## 📸 Demo
 
-- [ ] [Insert a screenshot of your fixed, winning game here]
+- [ ] ![Demo Screenshot](https://i.imgur.com/vUug4of.png)
 
 ## 🚀 Stretch Features
 
