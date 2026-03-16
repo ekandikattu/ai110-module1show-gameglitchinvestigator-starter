@@ -8,6 +8,13 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 - List at least two concrete bugs you noticed at the start  
   (for example: "the secret number kept changing" or "the hints were backwards").
 
+1. The hint given is the opposite of what it should be. For example, the hint would be higher if the guess was higher than the actual number, and vice versa.
+2. The "New Game" button does not work. It will not clear guesses from the previous game (or update the score back to 0).
+3. The difficulty levels are switched around. The "Hard" difficulty should be switched with the "Normal" difficulty.
+4. Updating the difficulty level does not change the secret value or the number of attempts (it always stays on Normal difficulty settings).
+5. The number of "Attempts Left" displayed is 1 less than the actual number of attempts at the start of the game. The first attempt does not change the display, but every other attempt changes the display. (Ex. On Normal mode, you can take 7 attempts by clicking guess 8 times, where the first guess will not register).
+6. The debug history records guesses with an offset of 1, such that the on 2nd guess, the first will be added to the history list, and so on until the n-1 is added on the nth guess. 
+7. The Final Score calculation does not follow any logical pattern based on the number of guesses used before hitting the target.
 ---
 
 ## 2. How did you use AI as a teammate?
@@ -16,7 +23,9 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 - Give one example of an AI suggestion that was correct (including what the AI suggested and how you verified the result).
 - Give one example of an AI suggestion that was incorrect or misleading (including what the AI suggested and how you verified the result).
 
----
+Correct Example: When I asked Copilot about where the code logic was for the inverted hint suggestion error, it correctly identified the conditional logic being inverted, resulting in the opposite print statements for hints following each guess. After I asked it to fix that conditional logic block and create a pytest test case to show it was fixed, it performed both tasks correctly and the pytest case passed successfully. When I inspected the hints myself, the feature was working as intended.
+
+Incorrect Example: I asked copilot to fix multiple bugs at once affecting the secret number generation, but it did not fix one of the bugs due to my prompting being more general and not specific enough. I verified it did not fix the bug by testing the app myself and going over the agent solution code to find the other fixes but not the one I was looking for. 
 
 ## 3. Debugging and testing your fixes
 
@@ -25,7 +34,9 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
   and what it showed you about your code.
 - Did AI help you design or understand any tests? How?
 
----
+I decided when a bug was fixed by looking through the agent solution to the problem (and using ask to clarify how it did it if I was confused) and also playing with the app to ensure that the feature (even if it did pass the pytest) was working as intended. 
+
+One test I ran was using the show hint feature and checking if it was giving the right hint on each guess. Copilot helped design all pytests and go over the solutions to the problems I gave, which gave me a clear understanding of what it did and why the pytest case passed. 
 
 ## 4. What did you learn about Streamlit and state?
 
